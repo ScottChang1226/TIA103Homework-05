@@ -1,7 +1,6 @@
 package Hw4;
 
 import java.util.*;
-import java.util.stream.Collector;
 
 public class HW_0723_Q6 {
 
