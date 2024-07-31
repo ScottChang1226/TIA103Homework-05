@@ -7,7 +7,7 @@ public class HW_0729_Q5_seltest {
 	String [] arr = new String[62];
 	
 	public static void main(String[] args) {
-		HW_0729_Q5 test = new HW_0729_Q5();
+		HW_0729_Q5_seltest test = new HW_0729_Q5_seltest();
 		Scanner sc = new Scanner(System.in);
 		for(int i = 0; i < 2; i++) {
 			System.out.println("已生成隨機驗證碼：");
@@ -15,7 +15,7 @@ public class HW_0729_Q5_seltest {
 			System.out.println(authNum);
 			System.out.print("請輸入驗證：");
 			String authInput = sc.next();
-			if (authInput == authNum) {
+			if (authInput.equals(authNum)) {
 				System.out.println("驗證成功！");
 				break;
 			} else {
@@ -60,8 +60,6 @@ public class HW_0729_Q5_seltest {
 		String authOutput = String.join("",arrOutput);
 		return authOutput;
 		
-	
-
 	}
 
 }
