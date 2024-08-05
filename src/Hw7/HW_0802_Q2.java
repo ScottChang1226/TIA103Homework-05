@@ -19,7 +19,9 @@ public class HW_0802_Q2 {
 				System.out.println("該文件已經存在，已覆寫其內容。");
 			}
 			FileWriter fwr = new FileWriter(file);
-			fwr.write(getNum());
+			String ans = getNum();
+			System.out.println(ans);
+			fwr.write(ans);
 			
 			fwr.flush();
 			fwr.close();
