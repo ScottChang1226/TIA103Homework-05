@@ -15,7 +15,7 @@ public class HW_0723_Q6 {
 				{90,80,100,75,50,20,99,75},
 		};
 		int arrSeats [] = cal.getBest(arrScore);
-		ArrayList<Integer> seatList = new ArrayList<>(arrSeats.length);
+		ArrayList<Integer> seatList = new ArrayList<Integer>(arrSeats.length);
 
 	    for (int i : arrSeats) {
 	      seatList.add(i);
