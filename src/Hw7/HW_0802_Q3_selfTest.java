@@ -22,15 +22,15 @@ public class HW_0802_Q3_selfTest {
 		
 		File input = new File(firstFile);
 		if(input.createNewFile()) {
-			System.out.println("文件創建成功。");
+			System.out.println("新檔案創建成功，將使用其進行複製。");
 		} else {
-			System.out.println("該文件已經存在，已覆寫其內容。");
+			System.out.println("欲複製之檔案已經存在，將使用其進行複製。");
 		}
 		File output = new File(secondFile);
 		if(output.createNewFile()) {
-			System.out.println("文件創建成功。");
+			System.out.println("全新欲覆蓋檔案創建成功。");
 		} else {
-			System.out.println("該文件已經存在，已覆寫其內容。");
+			System.out.println("目標欲覆蓋檔案為既存檔案。");
 		}
 		
 		HW_0802_Q3_selfTest test = new HW_0802_Q3_selfTest();
@@ -51,6 +51,7 @@ public class HW_0802_Q3_selfTest {
 			while ((readInside = bis.read(byAr)) > 0) {
 				bos.write(byAr, 0, readInside);
 			}
+			System.out.println("=============");
 			System.out.println("複製檔案成功！");
 			
 			bis.close();
