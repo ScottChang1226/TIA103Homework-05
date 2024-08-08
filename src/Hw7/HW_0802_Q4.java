@@ -34,46 +34,38 @@ public class HW_0802_Q4 {
 		} else {
 			System.out.println("該文件已經存在，已覆寫其內容。");
 		}
-		
 	
-		
-
-		
-		System.out.println("請輸入狗的名字：");
-		String dogName = sc.next();
-		Dog dog = new Dog(dogName);
-		System.out.println("請輸入貓的名字：");
-		String catName = sc.next();
-		Cat cat = new Cat(catName);
+		System.out.println("請輸入第一隻狗的名字：");
+		String dogName1 = sc.next();
+		Dog dog1 = new Dog(dogName1);
+		System.out.println("請輸入第二隻狗的名字：");
+		String dogName2 = sc.next();
+		Dog dog2 = new Dog(dogName2);
+		System.out.println("請輸入第一隻貓的名字：");
+		String catName1 = sc.next();
+		Cat cat1 = new Cat(catName1);
+		System.out.println("請輸入第二隻貓的名字：");
+		String catName2 = sc.next();
+		Cat cat2 = new Cat(catName2);
 		
 		try {
-		FileOutputStream fos = new FileOutputStream(file);
+		FileOutputStream fos = new FileOutputStream(fileName);
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		
-		oos.writeObject(cat);
-		oos.writeObject(dog);
+		oos.writeObject(dog1);
+		oos.writeObject(dog2);
+		oos.writeObject(cat1);
+		oos.writeObject(cat2);
 		
+		System.out.println("物件已經成功寫入。");
+		
+		fos.flush();
 		fos.close();
+		oos.flush();
 		oos.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		FileInputStream fis = new FileInputStream(file);
-		ObjectInputStream ois = new ObjectInputStream(fis);
-		
-		System.out.println(file.getName() + "檔案內容如下: ");
-		System.out.println("--------------------");
-		try {
-			while (true) {
-				((Animals) ois.readObject()).speak();
-				System.out.println("--------------------");
-			}
-		} catch (EOFException | ClassNotFoundException e) {
-			System.out.println("資料讀取完畢！");
-		}
-		ois.close();
-		fis.close();
 		
 
 	}
