@@ -12,9 +12,9 @@ import java.io.IOException;
 public class HW_0802_Q5 {
 
 	public static void main(String[] args) {
-		String path = "C:/data/Object.ser";
+		String filePath = "C:/data/Object.ser";
         try {
-            FileInputStream fis = new FileInputStream(path);
+            FileInputStream fis = new FileInputStream(filePath);
             ObjectInputStream ois = new ObjectInputStream(fis);
             Object obj;
             try {
@@ -28,12 +28,12 @@ public class HW_0802_Q5 {
                             System.out.println("讀取錯誤，未界定之內容。");
                         }
                 }
-            } catch (IOException e) {
-                System.out.println(path + "檔案內容已讀取完成。");
+            } catch (IOException e1) {
+                System.out.println(filePath + "檔案內容已讀取完成。");
             }
             ois.close();
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println(e.getMessage());
+        } catch (IOException | ClassNotFoundException e2) {
+            System.out.println(e2.getMessage());
         }
 
 	}
