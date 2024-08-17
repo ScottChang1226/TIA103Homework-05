@@ -20,7 +20,10 @@ public class HW_0816_Q1 {
 	
 	public int numCal(int num) {
 		int ans = 0;
-						
+		if(num == 1) {
+			ans = 1;
+		}
+		
 		for(int i = 2; (i*i) < num; i++) {
 			if(num % i == 0) {
 				ans = 1 ;
@@ -40,3 +43,5 @@ public class HW_0816_Q1 {
 	
 
 }
+
+//埃拉托斯特尼篩法：僅需驗證2~根號N的整數是否整除目標數N
