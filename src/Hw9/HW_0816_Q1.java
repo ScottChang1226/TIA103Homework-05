@@ -11,6 +11,7 @@ public class HW_0816_Q1 implements Runnable{
 	}
 	
 	public void run() {
+		
 		while(counter <= 10) {
 			System.out.println(Thread.currentThread().getName() + "吃第" + counter + "碗飯。");
 			counter++;
@@ -23,7 +24,8 @@ public class HW_0816_Q1 implements Runnable{
 				System.out.println(Thread.currentThread().getName() + "吃完了！");
 				counter++;
 			}
-		} 
+		}		
+		
 
 	}
 
@@ -42,8 +44,17 @@ public class HW_0816_Q1 implements Runnable{
 		Thread p2 = new Thread(player2);
 		p2.setName(name2);
 		
-		p1.start();
-		p2.start();
+		System.out.println("========大胃王比賽開始！========");
+		try {
+			p1.start();
+			p2.start();
+			p1.join();
+			p2.join();
+			System.out.println("========大胃王比賽結束！========");
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
+		}
+
 
 	}
 
