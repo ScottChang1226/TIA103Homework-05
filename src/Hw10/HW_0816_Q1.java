@@ -21,7 +21,7 @@ public class HW_0816_Q1 {
 	public int numCal(int num) {
 		int ans = 0;
 						
-		for(int i = 2; i < num; i++) {
+		for(int i = 2; (i*i) < num; i++) {
 			if(num % i == 0) {
 				ans = 1 ;
 				break;
